@@ -187,4 +187,3 @@ T_cliente captura_informacion()
     return(saver);
 }
 
-Added program “Acción de un banco”
