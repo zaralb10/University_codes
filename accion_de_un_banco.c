@@ -171,17 +171,18 @@ T_cliente captura_informacion()
                     {
                     printf("\n-> Resultado: ERROR (fondos insuficientes)\n");
                     } 
-            else 
+                else 
                  {
                     clientes[nc].monto_inicial -= p;
                     printf("\n-> Nuevo saldo: %s %d\n",clientes[nc].nom_cliente,clientes[nc].monto_inicial);
                     saver = clientes[nc];
+                 }
         }
         break;
         
         default: printf("No existe esta opcion\n");
         break; 
-        }
+        
     }
     
     return(saver);
