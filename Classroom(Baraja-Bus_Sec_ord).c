@@ -92,4 +92,4 @@ int bus_sec_ord( T_Alumno array[], char nombre[])
     }
 }
 
-Added program "Salo de clases ( baraja y busqueda secuencial ordenada )"
+
