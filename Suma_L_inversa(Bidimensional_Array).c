@@ -1,11 +1,14 @@
 #include <stdio.h>
 
+void sumar_areas(int n, int m, int A[n][m], int res[]); 
+
 int main() {
     int A[3][3] = {
         {4, 6, 5},
-        {3, 2, 2},
+        {3, 1, 2},
         {5, 4, 4}
     };
+    
     int res[3];
     sumar_areas(3, 3, A, res);
 
@@ -20,35 +23,17 @@ int main() {
 
 void sumar_areas(int n, int m, int A[n][m], int res[]) 
 {
-    int K;
-    if (n < m)
-    {
-        K = n;
-    } else 
-    {
-        K = m;
-    }
+    int suma, k = 0;
 
-    for (int k = 0; k < K; k++) 
+    for (int i = 0; i < n; i++)
     {
-        int suma = 0;
-
-        // tramo horizontal
-        for (int j = 0; j <= k; j++)
+        suma = 0;
+        for (int j = 0; j < i; j++)
         {
-            suma += A[k][j];
+            suma += A[i][j] + A[j][i]; 
         }
-
-        //  tramo superior
-        for (int r = 0; r < k; r++) 
-        {
-            int c = (m - 1) - r;
-            if (c >= 0 && c < m)
-            {
-                suma += A[r][c];
-            }
-        }
-
-        res[k] = suma;
+        suma += A[i][i];               
+        res[k++] = suma;              
     }
 }
+
